@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta name="viewport"  content="width=device-width, initial scale=1.0" />
+    <!-- CDN materialize css -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Aplicación de Tareas</title>
+  </head>
+  <body>
+    <div class="container">
+
+      <!-- Sección Formulario -->
+      <div class="row card-panel">
+        <form action="" class="col s12" method="POST">
+          {% csrf_token %}
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="task_title" type="text" class="validate" name="titulo"/>
+              <label for="task_title">Título de la Tarea</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea
+                id="task_content"
+                class="materialize-textarea"
+                name="contenido"
+              ></textarea>
+              <label for="task_content">Contenido</label>
+            </div>
+          </div>
+          <div class="row valign-wrapper">
+            <label class="col">
+              <input type="checkbox" class="filled-in" name="estado"/>
+              <span>Estado</span>
+            </label>
+            <button
+              class="col waves-effect waves-light btn s4"
+              type="submit"
+              name="crear"
+            >
+              Crear
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Sección Tareas -->
+      <ul class="collection">
+        <li class="collection-item">Tarea 1</li>
+        <li class="collection-item">Tarea 2</li>
+        <li class="collection-item">Tarea 3</li>
+        <li class="collection-item">Tarea 4</li>
+      </ul>
+      <!-- Fin de Sección -->
+    </div>
+
+    <!-- CDN materialize js -->
+    <script 
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+  </body>
+</html>
